@@ -5,10 +5,96 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles.css">
-    <script src="./script.js" defer></script>
-    <title>Document</title>
+    <script src="./script.js" type="module" defer></script>
+    <title>Restaurant Mobile Ordering App</title>
+    <!-- font start -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400&family=Smythe&display=swap" rel="stylesheet">
+    <!-- font end -->
 </head>
 <body>
-    
+    <div id="root">
+        <div class="app-border">
+            <div class="header">
+                <div class="header-text">
+                    <h1>Jimmy’s Diner</h1>
+                    <p>The best burgers and pizzas in town.</p>
+                </div>
+            </div class="header">
+            <div class="menu">
+                <div class="menu-item">
+                    <div class="menu-item-image">🍕</div>
+                    <div class="menu-item-info">
+                        <div class="menu-item-info-title">Pizza</div>
+                        <div class="menu-item-info-ingredients">
+                            pepperoni, mushrom, mozarella
+                        </div>
+                        <div class="menu-item-info-price">$14</div>
+                    </div>
+                    <div class="item-quantity">
+                        <div class="item-btn">-</div>
+                        <div class="item-num">0</div>
+                        <div class="item-btn">+</div>
+                    </div>
+                    
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-item-image">🍕</div>
+                    <div class="menu-item-info">
+                        <div class="menu-item-info-title">Pizza</div>
+                        <div class="menu-item-info-ingredients">
+                            pepperoni, mushrom, mozarella
+                        </div>
+                        <div class="menu-item-info-price">$14</div>
+                    </div>
+                    <div class="item-quantity">
+                        <div class="item-btn">-</div>
+                        <div class="item-num">0</div>
+                        <div class="item-btn">+</div>
+                    </div>
+                
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-item-image">🍕</div>
+                    <div class="menu-item-info">
+                        <div class="menu-item-info-title">Pizza</div>
+                        <div class="menu-item-info-ingredients">
+                            pepperoni, mushrom, mozarella
+                        </div>
+                        <div class="menu-item-info-price">$14</div>
+                    </div>
+                    <div class="item-quantity">
+                        <div class="item-btn">-</div>
+                        <div class="item-num">0</div>
+                        <div class="item-btn">+</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="checkout">
+                <h2>Your Order</h2>
+                <div class="cart-items">
+                    <div class="cart-item">
+                        <div class="cart-item-name">Pizza</div>
+                        <div class="remove-cart-item">remove</div>
+                        <div class="cart-item-total-price">14$</div>
+                    </div>
+                    <div class="cart-item">
+                        <div class="cart-item-name">Pizza</div>
+                        <div class="remove-cart-item">remove</div>
+                        <div class="cart-item-total-price">14$</div>
+                    </div>
+                </div>
+                <div class="total-price">
+                    <div class="checkout-title">Total Price</div>
+                    <div class="checkout-total-price">28$</div>
+                </div>
+                <button id="checkout-button">Complete Order</button>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
