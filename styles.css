@@ -184,3 +184,9 @@ body {
     cursor: pointer;
     color: #FFFFFF;
 }
+
+.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    border: 1px solid lightcoral;
+}
