@@ -21,6 +21,40 @@ function handleClick(event) {
         
     }
     renderMenu()
+    renderCheckout()
+}
+
+function renderCheckout() {
+    const itemsInCart = userMenuArray.filter(el => el.inCart > 0)
+    renderCartItems(itemsInCart)
+    renderTotalPrice(itemsInCart)
+}
+
+function renderTotalPrice(itemsInCartArray) {
+    const totalPrice = itemsInCartArray.reduce(calcPrice, 0)
+    document.getElementById('checkout-total-price').textContent = totalPrice
+
+    function calcPrice(accum, currVal) {
+        return accum + currVal.inCart * currVal.price
+    }
+}
+
+function renderCartItems(itemsInCartArray) {
+    let cartItemsHTML = ""
+    itemsInCartArray.forEach(el => cartItemsHTML += renderCartItem(el))
+    document.getElementById('cart-items').innerHTML = cartItemsHTML
+}
+
+function renderCartItem(cartItemObject) {
+    const totalItemPrice = cartItemObject.price * cartItemObject.inCart
+    return (
+        `<div class="cart-item">
+            <div class="cart-item-name">${cartItemObject.name}</div>
+            <div class="cart-item-quantity">x${cartItemObject.inCart}</div>
+            <div class="remove-cart-item" data-remove-cart-itemID=${cartItemObject.id}>remove</div>
+            <div class="cart-item-total-price">${totalItemPrice}$</div>
+        </div>
+        `)
 }
 
 function renderMenu() {
@@ -29,25 +63,25 @@ function renderMenu() {
     document.getElementById('menu').innerHTML = menuItemsHTML
 }
 
-function renderMenuItem(itemObject) {
-    const subIsDisabled = itemObject.inCart === 0
+function renderMenuItem(menuItemObject) {
+    const subIsDisabled = menuItemObject.inCart === 0
     const subStyle = subIsDisabled ? "disabled" : ""
     return (
         `
             <div class="menu-item">
-                <div class="menu-item-image">${itemObject.emoji}</div>
+                <div class="menu-item-image">${menuItemObject.emoji}</div>
                 <div class="menu-item-info">
-                    <div class="menu-item-info-title">${itemObject.name}</div>
+                    <div class="menu-item-info-title">${menuItemObject.name}</div>
                     <div class="menu-item-info-ingredients">
-                        ${itemObject.ingredients.join(', ')}
+                        ${menuItemObject.ingredients.join(', ')}
                     </div>
-                    <div class="menu-item-info-price">$${itemObject.price}</div>
+                    <div class="menu-item-info-price">$${menuItemObject.price}</div>
                 </div>
                 <div class="item-quantity">
-                    <div class="item-btn ${subStyle}" data-sub-productID=${itemObject.id}>-</div>
-                    <div class="item-num">${itemObject.inCart}</div>
+                    <div class="item-btn ${subStyle}" data-sub-productID=${menuItemObject.id}>-</div>
+                    <div class="item-num">${menuItemObject.inCart}</div>
                     <div class="item-btn" data-add-productID=
-                    ${itemObject.id}>+</div>
+                    ${menuItemObject.id}>+</div>
                 </div>
             </div>
         `

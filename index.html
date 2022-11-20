@@ -75,21 +75,24 @@
 
             <div class="checkout">
                 <h2>Your Order</h2>
-                <div class="cart-items">
+                <div class="cart-items" id="cart-items">
                     <div class="cart-item">
                         <div class="cart-item-name">Pizza</div>
+                        <div class="cart-item-quantity">x1</div>
                         <div class="remove-cart-item">remove</div>
                         <div class="cart-item-total-price">14$</div>
                     </div>
                     <div class="cart-item">
                         <div class="cart-item-name">Pizza</div>
+                        <div class="cart-item-quantity">x3</div>
                         <div class="remove-cart-item">remove</div>
                         <div class="cart-item-total-price">14$</div>
                     </div>
                 </div>
                 <div class="total-price">
                     <div class="checkout-title">Total Price</div>
-                    <div class="checkout-total-price">28$</div>
+                    <div class="checkout-total-price">
+                        <span id="checkout-total-price">28</span>$</div>
                 </div>
                 <button id="checkout-button">Complete Order</button>
             </div>
