@@ -15,21 +15,23 @@ body {
 
 .app-border {
     margin: auto;
-    border: 1px solid black;
+    border: 15px solid black;
     /* height: 600px; */
     width: 600px;
 }
 
 .header {
     height: 167px;
-    border: 1px dotted red;
-    background: url("./restaurant-ordering-bg.png");
+    background: url("./restaurant-ordering-bg1.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 110%;
     color: whitesmoke;
-
     padding: 0 var(--side-spacing);
-
+    width: 100%;
     display: flex;
     align-items: center;
+    box-sizing: border-box;
 }
 
 .header-text > * {
