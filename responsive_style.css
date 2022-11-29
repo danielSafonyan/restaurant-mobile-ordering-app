@@ -34,12 +34,12 @@ TYPOGRAPHY START
     margin: 0;
 }
 
-.header-text>h1 {
+.header-title {
     font-size: 2rem;
     margin-bottom: 0.5rem;
 }
 
-.header-text>p {
+.header-par {
     margin-top: 0.5rem;
     font-size: 1.5rem;
     text-shadow: 0 0 10px black;
@@ -69,7 +69,6 @@ TYPOGRAPHY END
 
 .menu-item-info-ingredients {
     font-size: 1.2rem;
-    line-height: 1.2rem;
     color: #8B8B8B;
     margin: 10px 0;
 }
@@ -174,7 +173,6 @@ TYPOGRAPHY END
 
     font-weight: 700;
     font-size: 16px;
-    line-height: 24px;
 
     cursor: pointer;
     color: #FFFFFF;
@@ -240,6 +238,7 @@ TYPOGRAPHY END
     border: none;
     background-color: transparent;
     color: red;
+    cursor: pointer;
 }
 
 .thank-you-message {
@@ -260,11 +259,30 @@ TYPOGRAPHY END
 @media screen and (min-width: 500px) {
     body {
         display: flex;
-        height: 100vh;
+        /* height: 100vh; */
     }
     #root {
         margin: auto;
+        width: 50vw;
         min-width: 500px;
+    }
+    .header-title {
+        font-size: 4vw;
+    }
+    .header-par {
+        font-size: 3vw;
+    }
+    .menu-item-image {
+        font-size: 4vw;
+    }
+    .menu-item-info-title {
+        font-size: 4vw;
+    }
+    .menu-item-info-ingredients {
+        font-size: 2vw;
+    }
+    .menu-item-info-price {
+        font-size: 3vw;
     }
     .item-quantity {
         flex-direction: row;
