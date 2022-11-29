@@ -2,9 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./responsive_style.css">
     <script src="./script.js" type="module" defer></script>
     <title>Restaurant Mobile Ordering App</title>
     <!-- font start -->
@@ -15,13 +16,12 @@
 </head>
 <body>
     <div id="root">
-        <div class="app-border">
             <div class="header">
                 <div class="header-text">
-                    <h1>Danny’s Diner</h1>
-                    <p>The best burgers and pizzas in town.</p>
+                    <h1 class="header-title">Danny’s Diner</h1>
+                    <p class="header-par">The best burgers and pizzas in town.</p>
                 </div>
-            </div class="header">
+            </div>
 
             <div class="menu" id="menu">
                 <!--  menu items  -->
@@ -41,15 +41,16 @@
             </div>
             <div class="payment-details" id="payment-details">
                 <form action="">
+                    <div class="payment-details-total">Your total is <span id="payment-details-total">25</span></div>
                     <h2>Enter Card Details</h2>
                     <input type="text" id="fullName" name="fullName" placeholder="name on card" required>
                     <input id="ccn" type="tel" inputmode="numeric" pattern="[0-9\s]{13,19}" maxlength="19"
                         placeholder="xxxx xxxx xxxx xxxx" required>
                     <input id="ccn" type="tel" inputmode="numeric" pattern="[0-9\s]{3}" maxlength="3" placeholder="xxx" required>
                     <button class="pay-button">Pay</button>
+                    <button type="button" class="cancel-button" id="cancel-button">Cancel</button>
                 </form>
             </div>
-        </div>
     </div>
 </body>
 </html>

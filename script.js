@@ -8,7 +8,7 @@ form.addEventListener('submit', function(event) {
     const userData = new FormData(form);
     const userName = userData.get('fullName').split(" ").shift();
     const thankYouHTML = `
-    <div class="thank-you-message">Thanks, ${userName}! Your order is on its way!</div>
+    <div class="thank-you-message">Thanks, ${userName}! <br>Your order is on its way!</div>
     `
     document.getElementById("payment-details").innerHTML = thankYouHTML
 })
@@ -43,7 +43,13 @@ function handleClick(event) {
 
     if (dataset.checkoutButton) {
         if (dataset.checkoutButton === 'true') {
+            document.getElementById('payment-details-total').textContent = renderTotalPrice(userMenuArray.filter(el => el.inCart > 0))
             document.getElementById('payment-details').style.display = "flex"
+            document.getElementById('cancel-button').addEventListener('click', () => {
+                document.getElementById('payment-details').style.display = "none"
+            })
+            
+            
         } else {
             console.log("Can't checkout!")
         }
@@ -80,6 +86,7 @@ function renderTotalPrice(itemsInCartArray) {
     function calcPrice(accum, currVal) {
         return accum + currVal.inCart * currVal.price
     }
+    return totalPrice;
 }
 
 function renderCartItems(itemsInCartArray) {
